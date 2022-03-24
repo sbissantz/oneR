@@ -32,3 +32,41 @@ that works better for you.
 - https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 - https://csgillespie.github.io/efficientR/index.html
 
+## R 
+
+You can download the latest R-version on CRAN (Comprehensive R Archive Network,
+see: [https://cran.r-project.org/]). Full-metal Linux users (like me), can also
+utilize their robots package manager. On Fedora, for example, I solely run `DNF
+install R` as root. If you have macOS, as I do professionally, you can use
+Homebrew (https://brew.sh/) to simplify the installation process. Just hack
+`brew install R` in a terminal.
+
+## R & R Studio
+
+R comes with a bare-bone programming environment. The R console is an
+operational battle station but lacks user-friendliness. Try it yourself. Open a
+terminal and type `R`. Do you know what I mean? Don't get me wrong; there are
+good reasons to use R's rudimentary user interface (e.g., if you drive a
+minimal-resource strategy). But we are not out for efficiency. We want to get
+the most out of our R experience. That's why we will stick with a creamy IDE
+(Integrated Development Environment) called `RStudio`. Don't get loose in
+details. The only thing I want you to remember is: *R is not RStudio*. RStduio
+operates on top of R. It provides a fully equipped, user-friendly environment
+to produce R code. Neat isn't it! If you want to give it a shot, download
+RStudio on their website (https://www.rstudio.com/).
+
+## R-Studio Shortcuts 
+
+Shortcuts are butter and bread for an efficient workflow. Within RStudio, you
+can always find a reference under `Tools > Keyboard Shortcuts Help`. If you
+want to remember only one shortcut in particular, try: `Alt + Shift + k`
+(Windows, Linux), `Option + Shift + k` (macOS). Why this one? Well, it opens
+the reference to all the others. If you like to view them in your browser,
+follow the links below.
+
+### Linux & Windows
+https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts
+
+### macOS 
+https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts
+
