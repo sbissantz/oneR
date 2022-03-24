@@ -32,6 +32,7 @@ that works better for you.
 - https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 - https://csgillespie.github.io/efficientR/index.html
 
+
 ## R 
 
 You can download the latest R-version on CRAN (Comprehensive R Archive Network,
@@ -40,6 +41,7 @@ utilize their robots package manager. On Fedora, for example, I solely run `DNF
 install R` as root. If you have macOS, as I do professionally, you can use
 Homebrew (https://brew.sh/) to simplify the installation process. Just hack
 `brew install R` in a terminal.
+
 
 ## R & R Studio
 
@@ -53,7 +55,9 @@ the most out of our R experience. That's why we will stick with a creamy IDE
 details. The only thing I want you to remember is: *R is not RStudio*. RStduio
 operates on top of R. It provides a fully equipped, user-friendly environment
 to produce R code. Neat isn't it! If you want to give it a shot, download
-RStudio on their website (https://www.rstudio.com/).
+RStudio on their website (https://www.rstudio.com/products/rstudio/). To make
+you jump right of the ground, please "Take a tour of RStudio’s IDE". The link
+is the same. 
 
 ## R-Studio Shortcuts 
 
