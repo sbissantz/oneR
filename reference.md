@@ -1,110 +1,104 @@
 
-Code
- cbind(...)
-base
-Combine matrix-like\(^*\) objects by columns
+### base::cbind()
+
+cbind(...) combines matrix-like\(^*\) objects by columns
 \(^*\)vector, matrix or data.frame
+
+```
 N <- nrow(iris) ; y <- sample(1:2, N, replace=TRUE)
 cbind(iris, y) [, 4:6]
     Petal.Width    Species y
 1           0.2     setosa 2
 2           0.2     setosa 2
-	
-Code
- readLines(con, n,...)
-base
-Read n or all lines from 'con'\(^*\)
-\(^*\)often a file
-readLines(paste(path, "/my_txt.txt", sep = ""))
+```
 
-"You know I am hungry" "Okay?" "Yes I'am"
-	
-Code
-(x - min(X)) / (max(x) - min(x))
-base snippet
-Normalize x
-\(X \rightarrow [0;1]\)
-x <- rnorm(100)
-X <- (x - min(x)) / (max(x) - min(x))
-Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
-0.00    0.25    0.50    0.50    0.75    1.00
-Code
-.libPaths()
-base
-Get/set the path of the R-package library
-op <- .libPaths() ; .libPaths("~/Desktop")
-.libPaths(op) ; .libPaths()
-[1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library"
-	
-Code
-D(~expr, "x")
-stats
-Compute the derivative of a function
- f_dash <- deriv(~ x^3 + 2 * x, "x")  ; x <- 3
+
+# stats::D()
+
+
+D(~expr, "x") computes the derivative of a function
+
+```
+f_dash <- deriv(~ x^3 + 2 * x, "x")  ; x <- 3
 eval(f_dash)
 
 [1] 33
 attr(,"gradient")
       x
 [1,] 29
-	
-Code
-HPDI(as.vector(samples), prob=mass)
-rethinking
-Highest posterior denisty interval
-mass <- 0.9
-HPDI(as.vector(samples), prob=mass)
-     |0.9      0.9|
-0.6055330 0.7390721
-Code
-I(x)
-base
-Ensure operators are interpreted as arithmetical operators
-lm(col1 ~ I(col2 - 1), data=d)
-	
-Code
-IQR(x)
-stats
-Compute the interquartile range of x
-\(x_{0.75} - x_{0.25}\)
- x <- rnorm(100, 0, 10) ; IQR(x)
+```
 
-[1] 14.17469
+# base::readLines()
 	
-Code
-ISOdatetime(year, month, day, hour = 12, min = 0, sec = 0,…)
-base
-Create date-times from numeric representations
-ISOdate(year = 2025, month = 10, day = 25)
+readLines(con, n,...) reads n or all lines from 'con' often a file
 
-[1] "2025-10-25 12:00:00 GMT"
+```
+readLines(paste(path, "/my_txt.txt", sep = ""))
+
+"You know I am hungry" "Okay?" "Yes I'am"
+```
+
 Code
-PI(samples, prob=mass)
-rethinking
-Percentile interval
-mass <- .9
-rethinking::PI(samples, prob=mass)
-       5%       95%
-0.6017652 0.7373659
+solve()
+base
+Solve linear equations systems
+5x + y = 15
+10x + 3y = 9
+X <- matrix(c(5, 10, 1, 3), ncol = 2)
+Y <- matrix(c(15, 9), ncol=1)
+solve(X,Y)
+
+[1,]   7.2
+[2,] -21.0
 	
 Code
-R.Version()
+solve(X)
 base
-Show me my current R Version
-R.Version()$version.string
-[1] "R version 4.1.2 (2021-11-01)"
-	
+Invert X
+X <- matrix(runif(9), ncol=3)
+solve(X)
+
+       [,1]   [,2]   [,3]
+[1,] -10.64  42.67 -40.91
+[2,]  -0.24  11.28 -14.40
+[3,]   8.43 -36.01  36.74
+
+
 Code
-Reduce(f, ls)
+system.file(package="pkg")
 base
-Apply binary f pairwise\(^*\) to the elements in ls
-\(^*\) (x1,x2) = x' ; (x', y)=... 
-df_list <- list(df1, df2, df3, df4)
-merge_2df <- function(d1,d2) {
-merge(d1, d2, by="ID", all.x=TRUE, all.y=FALSE)
-}
-Reduce(merge_2df, df_list)
+Find the location of a "pkg" on the system
+system.file(="elisr")
+
+[1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/elisr"
 Code
+t(X)
+base
+Calculate the transpose of X
+X <- matrix(1:4, ncol=2) ; t(X)
+
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+
+
+Code
+search()
+base
+Show me all my attached packages
+search
+[1] ".GlobalEnv"        "package:stats"   
+[4] "package:grDevices" "package:utils"    
+[7] "package:methods"   "Autoloads"         
+Code
+searchpaths()
+base
+Show me the locations of all my attached packages
+searchpaths()
+[2] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/stats"    
+[3] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/graphics" 
+
+
 Sys.Date()
 base
 Sow me the current system date
@@ -182,6 +176,89 @@ Sys.unsetenv("ENV")
 base
 Unset the environment variable ENV
 Sys.unsetenv("R_TEST")
+
+
+.libPaths()
+base
+Get/set the path of the R-package library
+op <- .libPaths() ; .libPaths("~/Desktop")
+.libPaths(op) ; .libPaths()
+[1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library"
+
+
+
+
+
+Code
+(x - min(X)) / (max(x) - min(x))
+base snippet
+Normalize x
+\(X \rightarrow [0;1]\)
+x <- rnorm(100)
+X <- (x - min(x)) / (max(x) - min(x))
+Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+0.00    0.25    0.50    0.50    0.75    1.00
+Code
+	
+	
+Code
+HPDI(as.vector(samples), prob=mass)
+rethinking
+Highest posterior denisty interval
+mass <- 0.9
+HPDI(as.vector(samples), prob=mass)
+     |0.9      0.9|
+0.6055330 0.7390721
+Code
+I(x)
+base
+Ensure operators are interpreted as arithmetical operators
+lm(col1 ~ I(col2 - 1), data=d)
+	
+Code
+IQR(x)
+stats
+Compute the interquartile range of x
+\(x_{0.75} - x_{0.25}\)
+ x <- rnorm(100, 0, 10) ; IQR(x)
+
+[1] 14.17469
+	
+Code
+ISOdatetime(year, month, day, hour = 12, min = 0, sec = 0,…)
+base
+Create date-times from numeric representations
+ISOdate(year = 2025, month = 10, day = 25)
+
+[1] "2025-10-25 12:00:00 GMT"
+Code
+PI(samples, prob=mass)
+rethinking
+Percentile interval
+mass <- .9
+rethinking::PI(samples, prob=mass)
+       5%       95%
+0.6017652 0.7373659
+	
+Code
+R.Version()
+base
+Show me my current R Version
+R.Version()$version.string
+[1] "R version 4.1.2 (2021-11-01)"
+	
+Code
+Reduce(f, ls)
+base
+Apply binary f pairwise\(^*\) to the elements in ls
+\(^*\) (x1,x2) = x' ; (x', y)=... 
+df_list <- list(df1, df2, df3, df4)
+merge_2df <- function(d1,d2) {
+merge(d1, d2, by="ID", all.x=TRUE, all.y=FALSE)
+}
+Reduce(merge_2df, df_list)
+Code
+
 
 	
 Code
@@ -1761,21 +1838,6 @@ data2 <- scan("data.txt", what = character(),
 skip=1, row.names=FALSE)
 
 	
-Code
-search()
-base
-Show me all my attached packages
-search
-[1] ".GlobalEnv"        "package:stats"   
-[4] "package:grDevices" "package:utils"    
-[7] "package:methods"   "Autoloads"         
-Code
-searchpaths()
-base
-Show me the locations of all my attached packages
-searchpaths()
-[2] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/stats"    
-[3] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/graphics" 
 	
 Code
 seq(...)
@@ -1845,30 +1907,6 @@ base
 Shortcut for sin(pi*x)
 
 	
-Code
-solve()
-base
-Solve linear equations systems
-5x + y = 15
-10x + 3y = 9
-X <- matrix(c(5, 10, 1, 3), ncol = 2)
-Y <- matrix(c(15, 9), ncol=1)
-solve(X,Y)
-
-[1,]   7.2
-[2,] -21.0
-	
-Code
-solve(X)
-base
-Invert X
-X <- matrix(runif(9), ncol=3)
-solve(X)
-
-       [,1]   [,2]   [,3]
-[1,] -10.64  42.67 -40.91
-[2,]  -0.24  11.28 -14.40
-[3,]   8.43 -36.01  36.74
 Code
 split(x, f)
 base
@@ -1994,22 +2032,6 @@ trimmed= mean(x, trim=.1))}
 x <- rcauchy(10) ; centre(x, "trimmed")
 [1] -2.970552
 	
-Code
-system.file(package="pkg")
-base
-Find the location of a "pkg" on the system
-system.file(="elisr")
-
-[1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/elisr"
-Code
-t(X)
-base
-Calculate the transpose of X
-X <- matrix(1:4, ncol=2) ; t(X)
-
-     [,1] [,2]
-[1,]    1    2
-[2,]    3    4
 	
 Code
 tail(x)
