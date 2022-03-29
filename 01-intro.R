@@ -132,6 +132,42 @@ example("browseURL")
 #                                       #  
 #########################################
 
+# args()
+#
+
+# TODO: Help! See the help site
+# ...add here!
+
+
+
+# TODO: Examples?
+# ...add here!
+
+
+
+# TODO: Try it!
+# ...add here!
+
+
+
+# Understand the structure of a function!
+# ...feat. args()
+#
+
+# TODO: args(ls) gives the following output. 
+# Try to understand the structure of a function!
+# 1. function(x)
+# 2. argument
+# 3. value
+
+args(ls)
+# function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+#     pattern, sorted = TRUE) 
+# NULL
+# 
+# TODO: Try to explain all those concepts, using the snippet:
+# function(argument=value). Give an example!
+
 #
 # Case-sensitivity
 #
@@ -146,7 +182,7 @@ example("browseURL")
 objects()
 ls()
 # character(0)
-# None! Damn, let's create on!
+# None! Damn, let's create one!
 
 # Creating objects!
 #
@@ -185,87 +221,17 @@ objects()
 #                                       #  
 #########################################
 
-
-
-#
-# R? A calculator?
-#
-
-
-
-
-
-
-
-#
-# Vectors!
-#
-
-# Numeric vector
-#
-x <- 1
-x
-
-# What does c() do?
-
-# Workflow
-# 1. Check man page, examples, vignettes
-?c
-example("c")
-
-# Happy? No?
-# 2. Check google!
-
-
-# Let's try it!
-X <- c(1,2,3)
-X
-
-# Character vector
-#
-a <- "Hihihihi"
-a
-
-X <- c("I", "am", "a", "Nerd")
-X
-
-# Trick
-(a <- "Hihihihi")
-
-
-
-> source("commands.R")
-For Windows Source is also available on the File menu. The function sink,
-> sink("record.lis")
-will divert all subsequent output from the console to an external file, record.lis. The command
-> sink()
-restores it to the console once again.
-
-
-#
-# Asking questions on stackoverflow
-#
-
-
-
-
-
-
-
-
-
-
-
-
 #
 # Homework
 #
 
 # TODO: What do we mean by saying "R is case sensitve"? Give two examples.
 
+
 # TODO: How can case sensitivity bias your search query? Compare!
 ?browseURL
 ?BrowseURL
+
 
 # TODO: What does the following function?
 ?RSiteSearch
@@ -274,31 +240,29 @@ restores it to the console once again.
 # TODO: What does "]]" do? 
 # (1) Read the help page & (2) Document your result!
 
+
 # TODO: Start an online search for browseURL()
 # Check if you did choose:
 # https://search.r-project.org/R/refmans/utils/html/browseURL.html
 
+
 # TODO: What does the browseVignettes function?
 # See the man page, examples, ... internet
+
 
 # TODO: What does the 'elisr' package in R?
 # Use an appropriate function (you previously learned) to find out!
 # Note: If you are on the online page, select "HTML". 
 
+
 # TODO: What does the browseVignettes function?
 # Refine your definition if needed!
+
 
 # TODO: When would you choose "apropos()" and "??" versus "?"
 # Two search scenarios!
 
+
 # TODO: Oh no! What went wrong?!
 # See the output and modify the following functions to get help! 
 browseURL
-
-
-
-
-
-
-
-
