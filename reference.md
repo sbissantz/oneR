@@ -64,14 +64,12 @@ solve(X)
 [3,]   8.43 -36.01  36.74
 
 
-Code
-system.file(package="pkg")
-base
 Find the location of a "pkg" on the system
+system.file(package="pkg")
 system.file(="elisr")
-
 [1] "/Library/Frameworks/R.framework/Versions/4.1/Resources/library/elisr"
-Code
+
+
 t(X)
 base
 Calculate the transpose of X
@@ -100,7 +98,6 @@ searchpaths()
 
 
 Sys.Date()
-base
 Sow me the current system date
 Sys.Date()
 [1] "2022-03-16"
@@ -1191,6 +1188,7 @@ Get a models testable implications\(^*\)
 dag <- dagitty('dag{ D <- A -> M }')
 impliedConditionalIndependencies(dag)
 D _||_ M | A
+
 Code
 integrate(f, lower, upper)
 stats
