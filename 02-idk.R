@@ -125,10 +125,29 @@ x + y
 # Pointwise exponentiation! 
 x^y
 
+#
+# c()'s bros
+#
+
+# seq()
+#
+
+# TODO: What does seq() do? 
+
+# Example!
+
+# : or ":()"
+#
+
+# TODO: What does ":" do? 
+
+# Example!
+
+# Other useful functions
+#
 
 # sum()
 # TODO: What does sum do? Create an example!
-
 
 # prod()
 # TODO: What does prod do? Create an example!
@@ -136,6 +155,57 @@ x^y
 # range()
 # TODO: What does prod do? Create an example!
 
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
+
+# Logical vectors
+#
+x_logic <- c(TRUE, FALSE)
+y_logic <- c(T, F)
+
+# Logical vectors are created by conditions!
+c(3,4,5,6) >= 4
+c(3,4,5,6) < 7
+
+# Top tip!
+#
+# Q: How many of you are true?
+sum(c(3,4,5,6) < 7)
+# more readable...
+cond <- c(3,4,5,6) >= 4
+sum(cond)
+
+# Missing values (NA) are logicals!
+#
+# NA, are you a numeric? A character?
+is.numeric(NA) ; is.character(NA)
+# ..or a logical?
+# 
+# TODO: Test, if NA is a logical
+
+# Missing values interfer with functions!
+#
+sum(c(1,2,3,NA))
+
+# TODO: Read sum()'s man page! Is there away to get rid of NA's?
+
+# NaN
+#
+
+# TODO: What does NaN stands for?
+?'NaN'
+
+# H2 produce a NaN (rarely seen beasts!)
+0/0
+
+# Inf
+#
+4/0
 
 # Character vectors
 #
@@ -149,17 +219,21 @@ a
 # I like...
 (X_char <- c("I", "am", "a", "Nerd"))
 
-
-# Logical vectors
+# paste()
 #
-x_logic <- c(TRUE, FALSE)
-y_logic <- c(T, F)
 
-# Top tip!
-# 
-sum(x_logic)
+?paste
+
+# TIP: Cool feature to create names!
+paste("X", 1:10, sep="")
+
+# TODO: Which concept we meet earlier does R use here?
+# Hint: Think of streatching vector of different lentgths!
 
 
+# paste0 ()
+# Slightly more efficient but less convenient!
+?paste0
 
 
 # Treasure box!
@@ -169,7 +243,89 @@ sum(x_logic)
 #                                       #  
 #########################################
 
+#
+# Tough stuff! ..Vector indexing
+#
 
+# TODO: Find out about!
+
+?"["
+
+# TODO: What do you expect "[]" to do?
+# Give a few examples!
+
+
+
+#
+# YOUR CODE
+#
+
+
+
+# Approaching "["
+# ..systematically!
+x <- seq(10, 100, by=10)
+
+# TODO: Guess! What is the result of...
+x[1]
+
+# TODO: Guess! What is the result of...
+x[2]
+
+# TODO: Guess! What is the result of...
+x[3]
+
+# ... You got it, right? (SELECT!)
+
+
+# TODO: Guess! What is the result of...
+
+x[-1]
+
+# TODO: Guess! What is the result of...
+x[-2]
+
+# TODO: Guess! What is the result of...
+x[-3]
+
+# ... You got it, right? (DON'T SELECT!)
+
+
+# TODO: Guess! What is the result of...
+
+x[c(1,2)]
+
+# TODO: Reformulate "x[c(1,2)]" to get the same output. 
+# Tipp: ":"
+
+# TODO: Guess! What is the result of...
+x[c(1,3,4)]
+
+# ... You got it, right? (SELECT MULTIPLE!)
+
+# TODO: Test yourself! Select all elements from x, but NOT the first and second
+# element. Tip: Use "-" and "c()"
+
+
+# Reformulating the statement to produce the desired output!
+x[-(1:2)]
+
+# ... You got it, right? (DON'T SELECT MULTIPLE!)
+
+
+
+
+
+
+
+# Define a vector
+x <- 1:
+
+
+
+# Top tip!
+#
+x[!is.na(x)]
 
 
 > source("commands.R")
@@ -188,20 +344,29 @@ restores it to the console once again.
 # Homework
 #
 
+########################################################################
+#                                                                      #
+# TODO: Revise our code! Move through each example again. Delete the   #
+# unnecessary bits. Meticulously document the remaining code nuancely! #
+#                                                                      #
+########################################################################
+
 # TODO: Write down 3 ways to assign c(1,2,3) to the name "x"
 # What is your prefered way to do it? Why?
-
 
 # TODO: What is the difference between the function "*" and prod()? 
 # Explain with an example! Tip: Read the help sites!
 
-
 # TODO: Explore the use of log, exp, sin, cos, tan, sqrt!
-
 
 # TODO: What does prod() do if you feed it a logical vector?
 # Give an example!
 
+# TODO: What's the difference between "I am a Nerd" and c("I", "am", "a",
+# "Nerd") in R?
 
+# TODO: What is the difference between ":" and seq()? Give an example.
+
+# TODO: What is vector indexing in R; descibe it in your own words!
 
 
