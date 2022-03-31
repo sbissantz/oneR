@@ -225,6 +225,14 @@ objects()
 # Homework
 #
 
+########################################################################
+#                                                                      #
+# TODO: Revise our code! Move through each example again. Delete the   #
+# unnecessary bits. Meticulously document the remaining code nuancely! #
+#                                                                      #
+########################################################################
+
+
 # TODO: What do we mean by saying "R is case sensitve"? Give two examples.
 
 
