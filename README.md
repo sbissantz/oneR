@@ -149,7 +149,7 @@ In compliance with the lecture, the German version of the schedule:
 | 10 | 27 | Zweifaktorielle ANOVA |
 | 11 | 28 | Korrelation und einfache Regression |
 | 12 | 29 | Multiple Regression und Partialkorrelation |
-| 13 | KW | 30 [Puffer] |
+| 13 | 30 | [Puffer] |
 
 ## Initial To-Dos 
 
