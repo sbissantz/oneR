@@ -175,6 +175,9 @@ head(iris)
 head(iris, n=10)
 # Documentation!
 
+tail(iris)
+# Documentation!
+
 summary(iris)
 # Documentation!
 
@@ -230,94 +233,116 @@ colnames(iris) <- c("a", "b", "c", "d", "e")
 #                                       #
 # TODO: Keep your favourite R commands! #
 #                                       #  
+######################################### 
+
+#
+# Get inside a data set!
+#
+
+data(iris)
+d <- iris
+
+# TODO: What does...
+d$Sepal.Length
+d$Sepal.Width
+d$Species
+
+# TODO: Compare the result to... 
+d[["Sepal.Length"]]
+
+# TODO: What is the difference between... 
+d["Sepal.Length"]
+d[["Sepal.Length"]]
+
+# TODO: What is the difference between... 
+d[1]
+d[[1]]
+
+# TODO: Read the "[[]]" manpage
+?"[["
+
+# TODO: Match the snippets together, that yield the same output 
+# ...use the following categories!
+#
+# Tip: Use "class()" to check your result!
+
+# one-element sub-data set
+#
+# 1.
+
+# 2.
+
+# 3.
+
+# A vector of elements
+#
+# 1.
+
+# 2.
+
+# 3.
+
+
+# Matrix indexing
+#
+
+#  TODO: Play around with the following funcitons!
+# Document your results!
+#
+
+d[1,1]
+d[1,-1]
+d[-1,-1]
+
+d[,]
+d[1,]
+d[2,]
+d[,1]
+d[,2]
+
+# Character indexing
+#
+d[,"Sepal.Length"]
+
+# What happens inside the machinery?
+(vars <- c("Sepal.Length", "Petal.Width"))
+d[,vars]
+
+# What happens inside the machinery?
+(vars <- c(1,3))
+d[,vars]
+
+# What happens inside the machinery?
+(vars <- c(1:3))
+d[,vars]
+
+# Logical indexing
+#
+
+# Neat!
+#
+# 1.
+is.na(d$Sepal.Length)
+# 2.
+!is.na(d$Sepal.Length)
+# 3.
+pat <- !is.na(d$Sepal.Length)
+# 4.
+d[pat,]
+
+# What is the difference between
+# is.na() and complete.cases() ?
+#
+complete.cases(d$Sepal.Length)
+cc <- complete.cases(d$Sepal.Length)
+d[pat,]
+
+# Treasure box!
 #########################################
-
-# Loading .Rda files
-#
-
-
-
-
-
-
-
-
-##### Übungsaufgabe 3.1 #####
-
-# Datensatz öffnen
-load("Datensatz_nach_03c.rda") # Objektname: daten_red
-
-# berufswunsch = Variable DE01
-# table(daten_red$DE01) # Häufigkeitstabelle
-
-# Konvertierung in einen Faktor (vorher als integer erkannt)
-daten_red$DE01.f <- factor(daten_red$DE01,
-                           levels=1:5, # oder c(1,2,3,4,5) statt 1:5
-                           labels=c("klinische Psychologie",
-                                    "pädagogische Psychologie",
-                                    "Wirtschaftspsychologie",
-                                    "Forschung",
-                                    "sonstiges"))
-
-# Konvertierung überprüfen
-str(daten_red$DE01.f)
-
-
-# table(daten_red$DE01.f) # Häufigkeitstabelle
-
-
-
-##### Übungsaufgabe 3.2 #####
-
-# Datensatz öffnen
-load("Datensatz_für_03c.rda") # Objektname: uebungsdaten
-
-library(car)
-uebungsdaten$ros_2.r <- recode(uebungsdaten$ros_2, '1=4; 2=3; 3=2; 4=1')
-uebungsdaten$ros_5.r <- recode(uebungsdaten$ros_5, '1=4; 2=3; 3=2; 4=1')
-uebungsdaten$ros_6.r <- recode(uebungsdaten$ros_6, '1=4; 2=3; 3=2; 4=1')
-uebungsdaten$ros_8.r <- recode(uebungsdaten$ros_8, '1=4; 2=3; 3=2; 4=1')
-uebungsdaten$ros_9.r <- recode(uebungsdaten$ros_9, '1=4; 2=3; 3=2; 4=1')
-
-# oder
-
-uebungsdaten$ros_2.r <- 5 - uebungsdaten$ros_2
-uebungsdaten$ros_5.r <- 5 - uebungsdaten$ros_5
-uebungsdaten$ros_6.r <- 5 - uebungsdaten$ros_6
-uebungsdaten$ros_8.r <- 5 - uebungsdaten$ros_8
-uebungsdaten$ros_9.r <- 5 - uebungsdaten$ros_9
-
-
-# Skalenmittelwert bilden
-uebungsdaten$SW_mean <- rowMeans(uebungsdaten[c("ros_1", "ros_2.r", "ros_3", "ros_4",
-                                                "ros_5.r", "ros_6.r", "ros_7", "ros_8.r",
-                                                "ros_9.r", "ros_10")], na.rm=TRUE)
-
-# Daten anschauen
-View(uebungsdaten[c("ros_1", "ros_2.r", "ros_3", "ros_4",
-                    "ros_5.r", "ros_6.r", "ros_7", "ros_8.r",
-                    "ros_9.r", "ros_10", "SW_mean")])
-# (der Selbstwert wurde erst ab der Vpn 133 erhoben)
-
-
-
-# Installing packages
-#
-
-
-
-# install.packages("MASS")
-# #
-
-# .xlsx
-
-install.packages("xlsx")
-library(xlsx)
-
-data3 <- read.xlsx("Daten3.xlsx", sheetIndex=1)
-
-# readxl::read_excel ergibt keinen Data Frame, sondern tbl_df
-
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+######################################### 
 
 #
 # Homework
