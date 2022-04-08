@@ -15,7 +15,6 @@ q()
 # To remove the closing question!
 q(save="no")
 
-
 #
 # Help! I need somebody, Help...! -- Beatles
 #
@@ -220,6 +219,25 @@ objects()
 # TODO: Keep your favourite R commands! #
 #                                       #  
 #########################################
+
+#
+# Get information about your machine! 
+#
+
+# Try me!
+Sys.locale()
+
+# Try me!
+Sys.info()
+
+# Try me!
+sessionInfo()
+
+# Try me!
+Sys.getlocale()
+
+# Try me!
+Sys.localeconv()
 
 #
 # Homework
