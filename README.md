@@ -3,7 +3,9 @@
     "One R[...] to rule them all, One R[...] to find them, One R[...] to bring
     them all. and in the darkness bind them." 
     
-    -- J.R.R. Tolkien, The Fellowship of the Ring 
+    – J.R.R. Tolkien, The Fellowship of the Ring 
+
+## I-i-intro!
 
 Hey dude! Welcome to my repository `teachR`. Happy to have you here! If you
 know nothing about R, congrats, you are at the right place. The repo should
@@ -25,7 +27,7 @@ maintainer on GitHub in...(*hold on*)...English. I am running out of examples,
 so I hope I've convinced you. 
 
 Did I miss anything? Yes! If you want to enjoy my live performance on stage
-Tuesday morning, 10:15-11:45, the course language will be German. In short,
+*Tuesday morning*, *10:15-11:45*, the course language will be German. In short,
 repo lecture: English; course lecture: German. Maybe this nudges you to attend
 the course. We will see.
 
@@ -36,7 +38,6 @@ that works better for you.
 
 - https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf
 - https://csgillespie.github.io/efficientR/index.html
-
 
 ## R 
 
@@ -102,6 +103,14 @@ kidding! Visit the course or ask one of your fellows.
 
 ### Schedule 
 
+The schedule outlines the topics you will master. The first six sessions are
+way off the lecture. I call it the R boot camp -- or should I say "ICU"?
+Another bad joke. Never mind, the first six weeks will equip you with some
+basic R knowledge, which we'll need for the rest of the course. The second half
+will teach you how to do data analyses in R. After thirteen weeks of intense
+instructions, coding, and tingling fingertips, you have made it! Congrats, you
+are a proficient R user. Keep on practicing!
+
 ### English Version
 
 | Unit | Week | Description |
@@ -123,6 +132,8 @@ kidding! Visit the course or ask one of your fellows.
 
 ### German Version
 
+In compliance with the lecture, the German version of the schedule:
+
 | Einheit | Kalenderwoche | Beschreibung |
 |----- | ---- | ----------- |
 | 1 | 17 | Einführung |
@@ -139,4 +150,13 @@ kidding! Visit the course or ask one of your fellows.
 | 11 | 28 | Korrelation und einfache Regression |
 | 12 | 29 | Multiple Regression und Partialkorrelation |
 | 13 | KW | 30 [Puffer] |
+
+## Initial To-Dos 
+
+1. Download R & RStudio [x]
+2. Gain access to the course materials! [x] 
+3. Make friends with others! [x]
+4. Download Swirl & Swirly [x] 
+
+If you're psyched, have a look into the R-intro ([here](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)).
 
