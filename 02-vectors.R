@@ -1,10 +1,4 @@
 #
-# Get information about ...everything!
-#
-Sys.locale()
-
-
-#
 # R? A calculator?
 #
 
@@ -235,6 +229,8 @@ paste("X", 1:10, sep="")
 # Slightly more efficient but less convenient!
 ?paste0
 
+# paste0() and paste() are the brother of c() for character vectors!
+#
 
 # Treasure box!
 #########################################
@@ -253,7 +249,6 @@ paste("X", 1:10, sep="")
 
 # TODO: What do you expect "[]" to do?
 # Give a few examples!
-
 
 
 #
@@ -275,7 +270,8 @@ x[2]
 # TODO: Guess! What is the result of...
 x[3]
 
-# ... You got it, right? (SELECT!)
+# ... You got it, right? 
+# (SELECT!)
 
 
 # TODO: Guess! What is the result of...
@@ -288,7 +284,8 @@ x[-2]
 # TODO: Guess! What is the result of...
 x[-3]
 
-# ... You got it, right? (DON'T SELECT!)
+# ... You got it, right? 
+# (DON'T SELECT!)
 
 
 # TODO: Guess! What is the result of...
@@ -310,35 +307,8 @@ x[c(1,3,4)]
 # Reformulating the statement to produce the desired output!
 x[-(1:2)]
 
-# ... You got it, right? (DON'T SELECT MULTIPLE!)
-
-
-
-
-
-
-
-# Define a vector
-x <- 1:
-
-
-
-# Top tip!
-#
-x[!is.na(x)]
-
-
-> source("commands.R")
-For Windows Source is also available on the File menu. The function sink,
-> sink("record.lis")
-will divert all subsequent output from the console to an external file, record.lis. The command
-> sink()
-restores it to the console once again.
-
-
-
-
-
+# ... You got it, right? 
+# (DON'T SELECT MULTIPLE!)
 
 #
 # Homework
@@ -368,5 +338,4 @@ restores it to the console once again.
 # TODO: What is the difference between ":" and seq()? Give an example.
 
 # TODO: What is vector indexing in R; descibe it in your own words!
-
 
