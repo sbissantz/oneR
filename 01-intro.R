@@ -51,11 +51,12 @@ help("?")
 # Help on a function
 help("browseURL")
 
-# TODO: Compare! How do they differ? 
+# TODO: Compare! 
 help("browseURL")
 ?browseURL
+# Document!
 
-# Get help on special symbols
+# Special symbols!
 help("?") 
 ?"?"
 ?help
@@ -67,6 +68,7 @@ help("?")
 # TODO: Which one do you prefere, why? 
 # Discuss with you neighbor!
 # t: 2 min
+ 
 
 # Treasure box!
 #########################################
@@ -74,6 +76,7 @@ help("?")
 # TODO: Keep your favourite R commands! #
 #                                       #  
 #########################################
+
 
 # help.search() & '??' 
 #
@@ -85,6 +88,7 @@ help("?")
 ??browseURL
 help.search("browseURL")
 # Fuzzy matching..FTW!
+
 
 # apropos()
 #
@@ -104,6 +108,7 @@ apropos("browse")
 # TODO: Which one do you prefere, why? 
 # Discuss with you neighbor!
 # t: 2 min
+
 
 # example()
 #
@@ -213,6 +218,7 @@ rm(list=ls())
 # rm(list=ls()) ; gc(reset=TRUE)
 objects()
 
+
 # Treasure box!
 #########################################
 #                                       #
@@ -220,8 +226,9 @@ objects()
 #                                       #  
 #########################################
 
+
 #
-# Get information about your machine! 
+# Once in a while!
 #
 
 # Try me!
@@ -239,17 +246,28 @@ Sys.getlocale()
 # Try me!
 Sys.localeconv()
 
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
+
+
 #
 # Homework
 #
 
-########################################################################
-#                                                                      #
-# TODO: Revise our code! Move through each example again. Delete the   #
-# unnecessary bits. Meticulously document the remaining code nuancely! #
-#                                                                      #
-########################################################################
-
+###############################################################################
+# TODO: Run the code again. Document all the functions to your understanding! #
+# More is more in this case. When you start documenting, think of your future #
+# self as a nincompoop, knowing nothing about R. Document the hell out of your#
+# brain. Add links, comments, etc. That's what I do when programming new      #
+# stuff. The strategy may seem to your present self as a waste of time. But   #
+# trust me, it will save your future self a lot of time. I had to learn this  #
+# the hard way!                                                               #
+###############################################################################
 
 # TODO: What do we mean by saying "R is case sensitve"? Give two examples.
 
