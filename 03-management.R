@@ -1,27 +1,61 @@
 #
-# Projects
+# Projects!
 #
 
 # Store your R projects in a separate folder -- a "WD" 
 
-# Set your working directory!
-#
-?setwd
-
-# Get your working directory!
+# Get your WD!
 #
 ?getwd
 
+# Set your WD!
+#
+?setwd
+
+# TODO: Set your working directory!
+
 # Trick
 #
-# ?file.choose
-setwd(file.choose())
+?file.choose
+setwd( file.choose() )
 
-# What does dir()?
+# Coding style!
+path <- file.choose()
+setwd(path)
+
+#
+# TODO: RStudio projects (.Rproj)
 #
 
-# Try it!
-# ?dir
+# dir()?
+#
+?dir
+
+# TODO: Try it!
+dir()
+
+#
+# Once in a while!
+#
+
+# .libPaths()
+#
+?.libPaths
+
+# TODO: Try it!
+
+# search()
+#
+?search
+
+# TODO: Try it!
+
+# searchpaths()
+#
+?searchpaths
+
+# TODO: Try it!
+
 
 # Treasure box!
 #########################################
@@ -30,26 +64,61 @@ setwd(file.choose())
 #                                       #  
 #########################################
 
+
 #
-# Installing packages
+# Install! 
 #
 
-# The R-universe!
+# Law of baseR: As long as you can do it in baseR -- you do not need to load an
+# external package! But...
+
+# install.packages()
+#
 ?install.packages
 
 # install the MASS package
 install.packages("MASS")
 
+# TODO: install "psych"! 
+
+# remove.packages()
+#
+?remove.packages
+
 # Remove the MASS package
 remove.packages("MASS")
 
+# TODO: remove "psych"
+#
+
+# update.packages()
+#
 ?update.packages
+
+# Update "MASS"!
 update.packages("MASS")
+# Tip: You cannot update what isn't there..
 
 # Install multiple packages
 #
+
+# Coding style
 pkgs <- c("MASS", "psych")
 install.packages(pkgs)
+
+# library()
+#
+?library
+
+# TODO: Load 6 attach "MASS"!
+
+# (loadNamespace()) 
+#
+# ?loadNamespace
+
+# Fancy!
+pkgs <- c("MASS", "psych")
+lapply(pkgs, library, character.only=TRUE)
 
 # Remove multiple packages
 #
@@ -58,14 +127,23 @@ remove.packages(c("MASS", "psych"))
 # You can get my package on CRAN, too!
 #
 install.packages("elisr")
+
+#
+# Once in a while!
+#
+
+# citation()
+#
+?citation
+
 # Cite it!
 citation("elisr")
 
-# Cite any package!
-#
-citation("psych")
-# Should be always part of your paper, if you use R!
+# Note: Should be always in your, if you used R!
 citation("base")
+
+# TODO: Cite "psych"!
+
 
 # Treasure box!
 #########################################
@@ -74,20 +152,28 @@ citation("base")
 #                                       #  
 #########################################
 
+
 #
-# Reading in data 
+# Read in! 
 #
 
-# Internal data sets
+# Internal data sets!
 #
-# ?iris
+
+# data()
+#
+?data
 data("iris")
-data("mtcars")
-data("USArrests")
+iris
+
+# TODO: Load "USArrests"
+
+# TODO: Load "mtcars"
 
 # See all available data sets
 data()
 
+# TODO: Load a data set you like!
 
 # External data sets
 #
@@ -116,6 +202,12 @@ args("read.table")
 
 # Load text files from URL!
 #
+
+# browse("http://www.ats.ucla.edu/stat/examples/ara/angell.txt")
+read.table("http://www.ats.ucla.edu/stat/examples/ara/angell.txt")
+
+# Coding style!
+#
 url <- "http://www.ats.ucla.edu/stat/examples/ara/angell.txt"
 # browseURL(url)
 dat <- read.table(url)
@@ -136,7 +228,8 @@ dat2 <- read.table(url, sep=",")
 # Tip: Look at the file before reading it! Use an editor.
 
 # Trick
-dat1 <- read.table(file.choose(), header=TRUE, na.strings="-99")
+path <- file.choose()
+dat2 <- read.table(path, header=TRUE, na.strings="-99")
 
 # TODO: What is the difference between
 # (a) read.table()
@@ -161,48 +254,62 @@ dat1 <- read.table(file.choose(), header=TRUE, na.strings="-99")
 
 # Noodle around with the following functions
 
+# TODO: Experimt!
 str(iris)
-# Documentation!
+# Document!
 
 # Tip: Look at the man pages, too!
 
+# TODO: Experimt!
 View(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 head(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 head(iris, n=10)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 tail(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 summary(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 colnames(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 names(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 rownames(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 dimnames(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 length(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 ncol(iris)
 NCOL(iris)
-# Documentation!
+# Document!
 
+# TODO: Experimt!
 nrow(iris)
 NROW(iris)
-# Documentation!
+# Document!
+
 
 # Treasure box!
 #########################################
@@ -211,15 +318,17 @@ NROW(iris)
 #                                       #  
 #########################################
 
-# What is the result of?
-# TODO: Inspect the data to find out!
-colnames(iris) <- paste0("V",1:5)
-# Documentation!
 
-# What is the result of?
-# TODO: Inspect the data to find out!
+# TODO: Experiment!
+?colnames
+colnames(iris) <- paste0("V",1:5)
+iris
+# Document!
+
+# TODO: Experiment!
+?colnames
 colnames(iris) <- c("a", "b", "c", "d", "e") 
-# Documentation!
+# Document!
 
 # TODO: Change the column names of iris to 
 # c("a", "b", "c", "d", "e") 
@@ -228,6 +337,16 @@ colnames(iris) <- c("a", "b", "c", "d", "e")
 # c("a", "b", "c", "d", "e") 
 # What's the problem?
 
+# TODO: What is the difference between..
+# (a) colnames(iris)
+# (b) colnames(iris) <- paste0("V",1:5)
+
+# TODO: Change iris row names!
+#
+# TiP:
+nrow(iris)
+
+
 # Treasure box!
 #########################################
 #                                       #
@@ -235,36 +354,42 @@ colnames(iris) <- c("a", "b", "c", "d", "e")
 #                                       #  
 ######################################### 
 
+
 #
-# Get inside a data set!
+# Vector Index!
 #
 
-data(iris)
-d <- iris
+data(iris) ; d <- iris
 
-# TODO: What does...
+# TODO: Experiment!
 d$Sepal.Length
 d$Sepal.Width
 d$Species
+# Document!
 
-# TODO: Compare the result to... 
+# TODO: Compare! 
+d$Sepal.Length
 d[["Sepal.Length"]]
+# Document!
 
-# TODO: What is the difference between... 
+# TODO: Compare!
 d["Sepal.Length"]
 d[["Sepal.Length"]]
+# Document!
 
-# TODO: What is the difference between... 
+# TODO: Compare!
 d[1]
 d[[1]]
+# Document!
 
-# TODO: Read the "[[]]" manpage
+# TODO: Read! ("[[]]" manual)
 ?"[["
 
-# TODO: Match the snippets together, that yield the same output 
+# TODO: Match the snippets, that yield the same output!
 # ...use the following categories!
 #
 # Tip: Use "class()" to check your result!
+?class
 
 # one-element sub-data set
 #
@@ -282,45 +407,90 @@ d[[1]]
 
 # 3.
 
-
-# Matrix indexing
+#
+# Matrix index!
 #
 
 #  TODO: Play around with the following funcitons!
 # Document your results!
 #
 
+# TODO: Experiment!
 d[1,1]
 d[1,-1]
 d[-1,-1]
+# Document!
 
+# TODO: Experiment!
 d[,]
 d[1,]
 d[2,]
 d[,1]
 d[,2]
+# Document!
 
-# Character indexing
+
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+######################################### 
+
 #
-d[,"Sepal.Length"]
+# Character index!
+#
 
-# What happens inside the machinery?
+# TODO: Experiment!
+d[,"Sepal.Length"]
+# Document!
+
+# TODO: What happens inside the machinery?
 (vars <- c("Sepal.Length", "Petal.Width"))
 d[,vars]
+# Document!
 
-# What happens inside the machinery?
+# Explain!
 (vars <- c(1,3))
 d[,vars]
+# Document!
 
-# What happens inside the machinery?
+# Explain!
 (vars <- c(1:3))
 d[,vars]
+# Document!
 
+
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+######################################### 
+
+
+#
 # Logical indexing
 #
 
-# Neat!
+# TODO: Experiment!
+d[,TRUE]
+d[TRUE,TRUE]
+d[,c(TRUE,FALSE)]
+d[c(TRUE,FALSE), ]
+# Document!
+
+# Coding style!
 #
+cond <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
+d[,cond]
+
+# TODO: Explain
+cond <- c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE)
+d[,cond]
+# Document!
+
+# is.na()
+#
+
 # 1.
 is.na(d$Sepal.Length)
 # 2.
@@ -330,12 +500,26 @@ pat <- !is.na(d$Sepal.Length)
 # 4.
 d[pat,]
 
-# What is the difference between
-# is.na() and complete.cases() ?
+# TODO: Experiment!
+#
+d[pat, cond]
+# Document!
+
+#
+# Once in a while!
+#
+
+# complete.cases()
+#
+?complete.cases
+
+# TODO: Compare!
+# is.na() vs. complete.cases()?
 #
 complete.cases(d$Sepal.Length)
 cc <- complete.cases(d$Sepal.Length)
 d[pat,]
+
 
 # Treasure box!
 #########################################
@@ -344,9 +528,21 @@ d[pat,]
 #                                       #  
 ######################################### 
 
+
 #
 # Homework
 # 
+
+###############################################################################
+# TODO: Run the code again. Document all the functions to your understanding! #
+# More is more in this case. When you start documenting, think of your future #
+# self as a nincompoop, knowing nothing about R. Document the hell out of your#
+# brain. Add links, comments, etc. That's what I do when programming new      #
+# stuff. The strategy may seem to your present self as a waste of time. But   #
+# trust me, it will save your future self a lot of time. I had to learn this  #
+# the hard way!                                                               #
+###############################################################################
+
 
 # TODO: DIY! In RStudio go to "Import Dataset" and import your data!
 # Choose 3 different data set we used in the lecture!
@@ -371,23 +567,19 @@ d[pat,]
 dat1 <- read.table("Daten_Befragung_2020.csv", header=TRUE, sep="\t", dec=".")
 dat2 <- read.delim2("Daten_Befragung_2020.csv")
 
+# TODO: What does... 
+?readRDS
+?saveRDS
+# Read the help site or do a google search!
+# Document your result and code 2 examples. Use mtcars & iris!
 
+# TODO: What does... 
+?save.image
+?load
+# Read the help site or do a google search!
+# Document your result and code 2 examples. Use mtcars & iris!
 
-# load a Workspace
-
-
-
-
-# load a Single R-Object
-
-
-library(MASS)
-data(survey)
-
-# install the psych package
-# What does the describe function?
-# use the internal iris data to find out!
-
-
-
+# TODO: Install the psych package!
+# TODO: What does the describe function in psych?
+# TODO: Use iris to find out!
 
