@@ -1,49 +1,75 @@
 #
-# R? A calculator?
+# Caculate!
 #
 
-# +, - , * , /
-
+# +,-,*,/,^()
+#
 2+2
 
-# Every function has "()"
+# Function? "()"?
 "+"(2,2)
 
 2-2
 
-# TODO: Fool around!
+# TODO: Check the following help site
+?"+"
 
+# TODO: Fool around!
+# e.g.:
 2^2
 
-# Advanced: Getting crazy
+# Your code!
 
-# Invert a matrix
-X <- matrix(c(5, 10, 1, 3), ncol = 2)
-solve(X)
+#
+# Advanced: crazy!
+#
 
-# Transpose a matrix
-example("t")
-t(X)
+# solve()
+#
+?solve
 
-# Sqaurte root of a complex number
-sqrt(-17+0i)
-
-# LGS
+# Solve the LGS!
 # 5x + y = 15
 # 10x + 3y = 9
 X <- matrix(c(5, 10, 1, 3), ncol = 2)
 Y <- matrix(c(15, 9), ncol=1)
 solve(X,Y)
 
+# TODO: Manipulate the code to solve your own LGS!
+
+# Invert a matrix!
+X <- matrix(c(5, 10, 1, 3), ncol = 2)
+solve(X)
+
+# t()
+#
+?t
+
+# Transpose a matrix!
+example("t")
+t(X)
+
+# sqrt()
+#
+?sqrt
+
+# Sqaurte root of a complex number!
+sqrt(-17+0i)
+
+# %*%()
+#
+
 # Matrix multiplication
 X%*%Y
 
-# TODO: Manipulate the code to solve your own LGS!
+# integrate()
+#
+?integrate
 
 # integrate
 example("integrate")
 
-# Own example!
+# DIY!
 f <- function(x) 2 * x + x^2 + 5 * x^3
 integrate(f, lower = 0, upper = 10)
 
@@ -61,19 +87,14 @@ integrate(f, lower = 0, upper = 10)
 #                                       #  
 #########################################
 
-
-# Let's start with the most basic data type...
-
 #
 # Vectors!
 #
 
-# TODO: google! What is a vector in R? (not in general!)
-
+# Let's start with the most basic data type...
 
 # Numeric vectors
 #
-
 
 # Numeric vector of length 1 
 # aka. scalar!
@@ -82,8 +103,8 @@ x
 
 # Booooooring! Alright, check...
 
-# TODO: What does c() do? Let's follow our basic workflow to find out!
-
+# c()
+#
 ?c
 example("c")
 
@@ -92,6 +113,7 @@ example("c")
 
 # Let's try it!
 # TODO: Build a three element vector and store it in "X"
+
 
 #
 # Trick: the "further assignment" using c()
@@ -157,10 +179,11 @@ x^y
 #                                       #  
 #########################################
 
+
 # Logical vectors
 #
 x_logic <- c(TRUE, FALSE)
-y_logic <- c(T, F)
+y_logic <- c(T, F) #No!
 
 # Logical vectors are created by conditions!
 c(3,4,5,6) >= 4
@@ -187,6 +210,15 @@ is.numeric(NA) ; is.character(NA)
 sum(c(1,2,3,NA))
 
 # TODO: Read sum()'s man page! Is there away to get rid of NA's?
+
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
+
 
 # NaN
 #
@@ -256,7 +288,6 @@ paste("X", 1:10, sep="")
 #
 
 
-
 # Approaching "["
 # ..systematically!
 x <- seq(10, 100, by=10)
@@ -310,16 +341,32 @@ x[-(1:2)]
 # ... You got it, right? 
 # (DON'T SELECT MULTIPLE!)
 
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
+
+
 #
 # Homework
 #
 
-########################################################################
-#                                                                      #
-# TODO: Revise our code! Move through each example again. Delete the   #
-# unnecessary bits. Meticulously document the remaining code nuancely! #
-#                                                                      #
-########################################################################
+###############################################################################
+# TODO: Run the code again. Document all the functions to your understanding! #
+# More is more in this case. When you start documenting, think of your future #
+# self as a nincompoop, knowing nothing about R. Document the hell out of your#
+# brain. Add links, comments, etc. That's what I do when programming new      #
+# stuff. The strategy may seem to your present self as a waste of time. But   #
+# trust me, it will save your future self a lot of time. I had to learn this  #
+# the hard way!                                                               #
+###############################################################################
+
+# TODO: What is the result of 2^c(1,3,2,4)? Why?
+
+# TODO: google! What is a vector in R? (not in general!)
 
 # TODO: Write down 3 ways to assign c(1,2,3) to the name "x"
 # What is your prefered way to do it? Why?
