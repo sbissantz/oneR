@@ -48,12 +48,14 @@ pie( species_freq )
 boxplot(iris$Species)
 boxplot(iris$Species, iris$Sepal.Length)
 
+
 # Treasure box!
 #########################################
 #                                       #
 # TODO: Keep your favourite R commands! #
 #                                       #  
 #########################################
+
 
 # plot() 2.0
 #
@@ -92,12 +94,14 @@ plot(iris$Sepal.Length, iris$Species)
 # TODO: uncomment class(), look at the classes of each object. 
 # What does plot conditional on each class? Why?
 
+
 # Treasure box!
 #########################################
 #                                       #
 # TODO: Keep your favourite R commands! #
 #                                       #  
 #########################################
+
 
 # Rising graphs
 #
@@ -155,6 +159,7 @@ plot(iris$Sepal.Length, pch=20, col="steelblue", main="Test123",
 #                                        #  
 ##########################################
 
+
 # TODO: Play around with all parameters to create an informative graph!
 # Use ?iris to get alle necessary info on the variable "Sepal.Length"
 hist(iris$Sepal.Width, breaks=30,
@@ -164,65 +169,138 @@ hist(iris$Sepal.Width, breaks=30,
       col="lightblue",
       right=FALSE)
 
-
 # TODO: Create an informative barplot! Use "iris$Species" 
 # Don't forget table()!
 
-
 # TODO: Create an informative index plot! Use "iris$Sepa.Width"
 
-
+#
 # Low-level plots
 #
-?abline
-?lines
-?points
 
-# TODO: Play around!
+# abline()
 #
+?abline
 plot(iris$Petal.Length, iris$Sepal.Length)
 abline(h=6, lwd=2)
 abline(v=6, lty=2)
 abline(a=0, b=3, lwd=3, col="red")
 
-# TODO: Play around!
-#
 plot(iris$Petal.Length, iris$Sepal.Length)
 text(5,5, labels = "text")
 
-# Example: Advanced (3-Dimensions)
+# text() 
 #
+?text
+# Example: Advanced (3-Dimensions)
 plot(iris$Petal.Length, iris$Sepal.Length, type="n")
 abbrev_species <- abbreviate(iris$Species, minlength = 3)
 text(iris$Petal.Length,iris$Sepal.Length, labels = abbrev_species)
 
+plot(iris$Petal.Length, iris$Sepal.Length)
+text(5,5, labels = "text")
 
-
-
-
+# grid()
 #
+?grid
+plot(iris$Petal.Length, iris$Sepal.Length, pch=21, col="yellow")
+grid(3,3, col="red", lwd=2)
+
+# box()
+#
+?box
+plot(iris$Petal.Length, iris$Sepal.Length)
+box(lty=2, lwd=5, col="yellow")
+box(lwd=10, col="red", which="figure")
+
+# Onion-style!
+#
+?lines
+?points
+plot(NULL, xlim=c(3,10), ylim=c(0,3))
+# Layer!
+points(iris$Sepal.Length, iris$Petal.Width)
+# Layer!
+lines(iris$Sepal.Length, iris$Petal.Width, lty=2, lwd=0.5)
+# Layer!
+abbrev_species <- abbreviate(iris$Species, minlength = 3)
+abbrev_species <- abbreviate(iris$Species, minlength = 3)
+# Layer!
+text(iris$Sepal.Length + 0.1, iris$Petal.Width + 0.1, labels = abbrev_species)
+
+# Important: Graphs grow! They increase in complexity. Mastering them means
+# to add layer by layer -- until the desired result is reached
 #
 
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
 
+# Save! 
+#
 
-
-
-
-
-
-# 5. Allgemeines zu Grafiken -----------------------------------
-
-##### Grafiken speichen, z.B. als png:
-
-# 1. Start des Speicherbefehls
-png("Boxplot_Untergruppen.png", width=400, height=500)
-
-# 2. Funktion, die die Grafik erzeugt
-boxplot(daten$REAP ~ daten$geschl.f, ylim=c(1,7),
-        main="Boxplots Reappraisal \n getrennt nach Geschlecht",
-        xlab="Geschlecht", ylab="Reappraisal")
-
-# 3. Ende des Speicherbefehls
+# .png
+# Note: Stores it in the current WD! See: getwd(9)
+png("beatiful_graph", width=400, height=500)
+plot(iris$Sepal.Length, pch=20)
+# Photo finish!
 dev.off()
 
+# .jpeg
+# Note: Stores it in the current WD! See: getwd(9)
+jpeg("Boxplot_Untergruppen.jpg", width=400, height=500)
+plot(iris$Sepal.Length, pch=20)
+# Photo finish!
+dev.off()
+
+# General! 
+# Note: Stores it in "~/Desktop/boxplot.png"
+dev.print(device=png, filename="~/Desktop/boxplot.png", width=400, height=500)
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #  
+#########################################
+
+#
+# Homework
+#
+
+###############################################################################
+# TODO: Run the code again. Document all the functions to your understanding! #
+# More is more in this case. When you start documenting, think of your future #
+# self as a nincompoop, knowing nothing about R. Document the hell out of your#
+# brain. Add links, comments, etc. That's what I do when programming new      #
+# stuff. The strategy may seem to your present self as a waste of time. But   #
+# trust me, it will save your future self a lot of time. I had to learn this  #
+# the hard way!                                                               #
+###############################################################################
+#
+# TODO: Load R's internal data set "cars"
+#
+# TODO: Load R's internal data set "cars"
+#
+# TODO: Familiarize yourself with the data set!
+#
+# TODO: Create a boxplot, a scatter plot, and index plots from the data!
+#
+# TODO: Use the appropriate arguments to make the graph informative
+#
+# TODO: Save the graph as .png
+#
+# TODO: Send the graph to your neighbour!
+#
+# TODO: Use data() and select a data set of choice!
+# Note: Use a different one than your fellow!
+#
+# TODO: Repeat the previous exercise!
+#
+# TODO: Send your buddy the code & the graph via mail! 
+#
+# TODO: Stick the whole data set in pairs() or use plot(), what is the result?
 
