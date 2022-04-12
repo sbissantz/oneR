@@ -110,6 +110,15 @@ t.test(spendings, alternative="less", mu=25, var.equal = FALSE)
 # TODO: Do psychology students spend --on average-- more than 25 Euro for a
 # visit at the hairdresser? Test the hypothesis!
 
+
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #
+#########################################
+
+
 # Simulate data
 #####################################################
 set.seed(123)                                       #
@@ -154,13 +163,13 @@ var.test(time_m, time_f, alternative="two.sided")
 # HO: mu_male + 30 > mu_female
 # equal to: mu_male - mu_female > 30(!)
 
-# Import!
-#
 
-# TODO: You implicitally assumed a 95% confidence level! See: '?var.test' and 
-# '?t.test'. Some metascientists, like Barker Bausell, suggest to implement a
-# confidence level of alpha=0,1%. Run the analysis again. Do you come to a
-# different conclusion? Why (not)? 
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #
+#########################################
 
 #
 # A little digression!
@@ -195,30 +204,41 @@ lbls <- c("female", "male")
 #
 with(df, chisq.test(vegi, sex))
 
-# Note: I did stick df's vegi & sex into the function! 
+# Note: I did stick df's vegi & sex into the function!
 # TODO: Use the factor variables, and rerun the test again. Does the result
 # change? Why (not)?
 
 # TODO: Use the chisq-value of the aboves test and the following snippet to
-# test your hypotesis again! 
+# test your hypotesis again!
 #
 alpha <- 1-0.95
-qchisq(alpha,1) 
+qchisq(alpha,1)
 # [1] 3.841459
 
 
+# Treasure box!
+#########################################
+#                                       #
+# TODO: Keep your favourite R commands! #
+#                                       #
+#########################################
+
 
 #
+# Homework
 #
-#
 
+###############################################################################
+# TODO: Run the code again. Document all the functions to your understanding! #
+# More is more in this case. When you start documenting, think of your future #
+# self as a nincompoop, knowing nothing about R. Document the hell out of your#
+# brain. Add links, comments, etc. That's what I do when programming new      #
+# stuff. The strategy may seem to your present self as a waste of time. But   #
+# trust me, it will save your future self a lot of time. I had to learn this  #
+# the hard way!                                                               #
+###############################################################################
 
-
-
-
-
-
-
-
-
-
+# TODO: You implicitly assumed a 95% confidence level! See: '?var.test' and
+# '?t.test'. Some metascientists, like Barker Bausell, suggest to implement a
+# confidence level of alpha=0,1%. Run the course code. Do you come to a
+# different conclusion? Why (not)?
