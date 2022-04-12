@@ -17,6 +17,9 @@ N <- 1e2                                             #
 glas_ml <- rnorm(N, mean = 360, sd = 50)             #
 ######################################################
 
+# Testing for differences to a fixed value
+#
+
 # TODO: Imagine we produce wine glasses. We want make sure, our wine glass are
 # nearly equal sized. Thus we randomly draw glasses out of a bunch and check,
 # whether the glass is equal -- on average -- to the desired result (360ml).
@@ -26,15 +29,25 @@ t.test(glas_ml, mu = 360)
 
 # TODO: Interpret!
 
-# TODO: Evaluate! Why may I found the following snippet 'better'?
+# TODO: Evaluate! Why may I find the following snippet 'better'?
 t.test(glas_ml, mu = 360, alternative = "two.sided")
 
-# TODO: Evaluate! Why may I found the following snippet even 'better'?
+# TODO: Evaluate! Why may I find the following snippet even 'better'?
 t.test(glas_ml, mu = 360, alternative = "two.sided", var.equal = FALSE)
 
 # TODO: Change the value of "N" in the simulated data section systematically.
 # Increase it by 10 units. What do you observe for the t-value, p-vale and the
 # confidence interval.
+
+# TODO: How could the following snippet to test your hypothesis?
+#
+qt(0.95, df=N-1)
+
+# TODO: Why are both snippets nearly equal?
+#
+?all.equal
+all.equal(qt(0.95, df=N-1), qnorm(0.95), tolerance=.1)
+# Tip: N..
 
 # You don't need to understand the code!
 ################################################################################
@@ -82,8 +95,11 @@ N <- 10                          #
 spendings <- rnorm(N, 25, 20)    #
 ##################################
 
-# TODO: Do psychology students spend--on average--less than 25 Euro for a
-# visit at the hairdresser?
+# Testing for differences in means
+#
+
+# Do psychology students spend--on average--less than 25 Euro for a visit at
+# the hairdresser?
 
 t.test(spendings, alternative="less", mu=25, var.equal = FALSE)
 
@@ -121,15 +137,86 @@ t.test(time_m, time_f, alternative="less", mu=0, paired=FALSE, var.equal=TRUE)
 # Tip: Which hypothesis you aim to reject/keep?
 
 # TODO: What happens inside the machinery if you set "var.equal=FALSE"?
-# Tip: Welch...
+# Tip: Part of your answer should be: Levenne & Welch
 
-# TODO: Test for equal variances! Repeat. Does the result change? Why (not)??
+# Test for equal variances! Repeat. Does the result change? Why (not)??
+?var.test()
+# Tip: Is the spread of "time at the gym" different for female and male
+# students?
+# H0: sigma_x/sigma_y = 1 (equal variances)
+# H0: sigma_x = sigma_y
+
+var.test(time_m, time_f, alternative="two.sided")
 
 # TODO: Do female psychology students spend --on avergae-- 30 minutes more time
 # at the gym then their male fellows?
 # Tip: Use the snippet above!
 # HO: mu_male + 30 > mu_female
 # equal to: mu_male - mu_female > 30(!)
+
+# Import!
+#
+
+# TODO: You implicitally assumed a 95% confidence level! See: '?var.test' and 
+# '?t.test'. Some metascientists, like Barker Bausell, suggest to implement a
+# confidence level of alpha=0,1%. Run the analysis again. Do you come to a
+# different conclusion? Why (not)? 
+
+#
+# A little digression!
+#
+
+# Simulate data
+#####################################################
+set.seed(123)                                       #
+N <- 1e3                                            #
+time <- rnorm(N, 120, 20)                           #
+vegi <- rbinom(N, 1, .5)                            #
+sex <- rbinom(vegi, 1, .5)                          #
+df <- cbind.data.frame(vegi, sex)                   #
+#####################################################
+
+# TODO: HO Are gender and vegetarian status dependent?
+
+# TODO: STOP! gender is not a factor! Make it one.
+df$sex
+# Ladies first coding!
+lbls <- c("female", "male")
+(df$sex.f <- factor(sex, labels=lbls, levels=c(0,1)))
+
+# TODO: Inspect df! What is still the problem with vegi status?
+# Do something about it!
+
+# Test categorical variables!
+#
+?chisq.test
+
+# H0: no relationsship!
+#
+with(df, chisq.test(vegi, sex))
+
+# Note: I did stick df's vegi & sex into the function! 
+# TODO: Use the factor variables, and rerun the test again. Does the result
+# change? Why (not)?
+
+# TODO: Use the chisq-value of the aboves test and the following snippet to
+# test your hypotesis again! 
+#
+alpha <- 1-0.95
+qchisq(alpha,1) 
+# [1] 3.841459
+
+
+
+#
+#
+#
+
+
+
+
+
+
 
 
 
